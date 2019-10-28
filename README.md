@@ -1,4 +1,4 @@
-# gamp [![GoDoc](https://godoc.org/github.com/olebedev/go-gamp?status.svg)](https://godoc.org/github.com/olebedev/go-gamp)
+# gamp [![GoDoc](https://godoc.org/github.com/blablapolicja/go-gamp?status.svg)](https://godoc.org/github.com/blablapolicja/go-gamp)
 
 > [Google Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/reference) in Golang
 
@@ -14,8 +14,8 @@ import (
 	"context"
 
 	"github.com/AlekSi/pointer"
-	gamp "github.com/olebedev/go-gamp"
-	"github.com/olebedev/go-gamp/client/gampops"
+	gamp "github.com/blablapolicja/go-gamp"
+	"github.com/blablapolicja/go-gamp/client/gampops"
 )
 
 func main() {

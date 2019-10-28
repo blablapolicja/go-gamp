@@ -9,7 +9,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/olebedev/go-gamp/client/gampops"
+	"github.com/blablapolicja/go-gamp/client/gampops"
 )
 
 // Default measurement protocol HTTP client.

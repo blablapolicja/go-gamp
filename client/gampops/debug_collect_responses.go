@@ -11,7 +11,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/olebedev/go-gamp/models"
+	"github.com/blablapolicja/go-gamp/models"
 )
 
 // DebugCollectReader is a Reader for the DebugCollect structure.
@@ -45,7 +45,13 @@ func NewDebugCollectOK() *DebugCollectOK {
 Debug Report
 */
 type DebugCollectOK struct {
-	Payload []*models.HitParsingResult
+	Payload Payload
+}
+
+//Payload is payload received in DebugCollectOK
+type Payload struct {
+	HitParsingResult []*models.HitParsingResult `json:"hitParsingResult"`
+	ParserMsg        []*models.ParserMessage    `json:"parserMessage"`
 }
 
 func (o *DebugCollectOK) Error() string {

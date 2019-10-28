@@ -1,4 +1,4 @@
-package: github.com/olebedev/go-gamp
+package: github.com/blablapolicja/go-gamp
 import:
 - package: github.com/go-openapi/errors
 - package: github.com/go-openapi/runtime

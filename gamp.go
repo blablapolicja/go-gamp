@@ -2,13 +2,14 @@ package gamp
 
 import (
 	"context"
+	"encoding/json"
 	"io"
 	"io/ioutil"
 
+	"github.com/blablapolicja/go-gamp/client"
+	"github.com/blablapolicja/go-gamp/client/gampops"
 	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/olebedev/go-gamp/client"
-	"github.com/olebedev/go-gamp/client/gampops"
 	"golang.org/x/time/rate"
 )
 
@@ -54,6 +55,12 @@ func New(ctx context.Context, tid string) *gampops.Client {
 	transport.Context = ctx
 	transport.Consumers["image/gif"] = runtime.ConsumerFunc(func(reader io.Reader, data interface{}) error {
 		_, err := ioutil.ReadAll(reader)
+		return err
+	})
+
+	transport.Consumers["application/javascript"] = runtime.ConsumerFunc(func(reader io.Reader, data interface{}) error {
+		d, err := ioutil.ReadAll(reader)
+		err = json.Unmarshal(d, &data)
 		return err
 	})
 
